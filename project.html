@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dressing game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+	ul {
+		list-style-type: none;
+	}
+	line {
+		display: block;
+	}
+	.buttons {
+		
+	}
+	.buttons button {
+		display:block;
+		width: 50%;
+	}
+	.thumbs {
+		width: 200px;
+		height: 480px;
+		overflow: auto;
+		background-color:pink;
+	}
+	
+	.picThumb {
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 5px;
+		margin: 5px;
+		height: 90px;
+		width: 75px;
+		background-color: white;
+	}
+
+	.picThumb:hover {
+		box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+	}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Game</h2>
+  <p>some message</p>
+  <div class="row">
+    <div class="col-md-2" style="background-color:yellow;">
+		<div class="buttons">
+		  <button>eyes</button>
+		  <button>hair</button>
+		  <button>dress</button>
+		  <button>shoes</button>
+		</div>
+    </div>
+    <div class="col-md-3">
+		<div class="thumbs">
+			<ul id="eyes">
+				<li><img class="picThumb" src="../PICS/2EyesThumb/Eyes_1_11.png" alt="eyes"></li>
+				<li><img class="picThumb" src="../PICS/2EyesThumb/Eyes_1_13.png" alt="eyes"></li>
+				<li><img class="picThumb" src="../PICS/2EyesThumb/Eyes_1_22.png" alt="eyes"></li>
+			</ul>
+			<ul id="hair">
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_1_61.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_1_62.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_1_63.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_1_64.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_11.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_12.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_13.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_14.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_41.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_42.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_43.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_44.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_61.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_62.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_63.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_64.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_71.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_72.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_73.png" alt="hair"></li>
+				<li><img class="picThumb" src="../PICS/2HairsThumb/Hairs_2_74.png" alt="hair"></li>
+			</ul>
+			<ul id="dress">
+				<li><img class="picThumb" src="../PICS/2DressesThumb/Dress_1_11.png" alt="dress"></li>
+				<li><img class="picThumb" src="../PICS/2DressesThumb/Dress_1_12.png" alt="dress"></li>
+				<li><img class="picThumb" src="../PICS/2DressesThumb/Dress_1_13.png" alt="dress"></li>
+				<li><img class="picThumb" src="../PICS/2DressesThumb/Dress_1_14.png" alt="dress"></li>
+				<li><img class="picThumb" src="../PICS/2DressesThumb/Dress_1_21.png" alt="dress"></li>
+				<li><img class="picThumb" src="../PICS/2DressesThumb/Dress_1_22.png" alt="dress"></li>
+				<li><img class="picThumb" src="../PICS/2DressesThumb/Dress_1_24.png" alt="dress"></li>
+				<li><img class="picThumb" src="../PICS/2DressesThumb/Dress_1_25.png" alt="dress"></li>
+			</ul>
+			<ul id="shoes">
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_11.png" alt="shoes"></li>
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_12.png" alt="shoes"></li>
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_13.png" alt="shoes"></li>
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_21.png" alt="shoes"></li>
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_22.png" alt="shoes"></li>
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_23.png" alt="shoes"></li>
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_31.png" alt="shoes"></li>
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_32.png" alt="shoes"></li>
+				<li><img class="picThumb" src="../PICS/2ShoesThumb/Shoes_1_33.png" alt="shoes"></li>
+			</ul>
+		</div>
+    </div>
+    <div class="col-md-7" style="background-color:grey;">
+		<p>Canvas</p>
+		<img src="../PICS/Base_OK.png" alt="girl">
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
