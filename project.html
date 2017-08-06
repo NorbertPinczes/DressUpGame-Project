@@ -14,13 +14,17 @@
 	
 	ul {
 		list-style-type: none;
+		display: none;
 	}
-	line {
-		display: block;
+	
+	#mainSelection {
+		 height:480px;
 	}
+
 	.buttons {
 		margin:20px;
 	}
+	
 	.buttons button {
 		display:block;
 		padding:5px;
@@ -36,6 +40,15 @@
 		background-color:pink;
 	}
 	
+	/*#eyes {
+		display: none;
+	}*/
+	
+	/* #thumbs ul {
+		position: absolute;
+	}*/
+	
+	
 	#thumbs img {
 		border: 1px solid #ddd;
 		border-radius: 4px;
@@ -49,47 +62,6 @@
 	#thumbs img:hover {
 		box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 	}
-	
-	<!--
-	.thumbs {
-		width: 80%;
-		height: 480px;
-		margin: 10px;
-		overflow: auto;
-		background-color:pink;
-		
-	}
-	
-	.thumbs img {
-		border: 1px solid #ddd;
-		border-radius: 4px;
-		padding: 5px;
-		margin: 5px;
-		height: 60%;
-		width: 60%;
-		background-color: white;
-	}
-	
-	.thumbs img:hover {
-		box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-	}
-	-->
-	
-	<!--
-	.picThumb {
-		border: 1px solid #ddd;
-		border-radius: 4px;
-		padding: 5px;
-		margin: 5px;
-		height: 60%;
-		width: 60%;
-		background-color: white;
-	}
-
-	.picThumb:hover {
-		box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-	}
-	-->
 	
 	#holder {
 		padding: 10px;
@@ -130,10 +102,56 @@
 		z-index: 50;
 	}
 	
+	@media (max-width: 800px) {
+		#mainSelection {
+			height:15%;
+		}
+		
+		.buttons button {
+			display: inline;
+			width: 20%;
+		}
+		
+		/*
+		ul {
+			list-style-type: none;
+			display: inline;
+		}
+		*/
+		
+		#thumbs {
+			width: 100%;
+			height: 15%;
+			margin: 10px;
+			overflow: auto;
+			background-color:pink;
+		}
 	
+		#thumbs img {
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			display: inline;
+			padding: 5px;
+			margin: 5px;
+			height: 30%;
+			width: 30%;
+			background-color: white;
+		}
+	}
 	
 </style>
 <script>
+	function showList(value) {
+		var thumbs = document.getElementById("thumbs");
+		var uls = thumbs.getElementsByTagName("ul");
+		var i;
+		for (i = 0; i < uls.length; i++){
+			uls[i].style.display = 'none';
+		}
+		document.getElementById(value).style.display = 'block';
+		thumbs.style.overflow = 'auto';
+	}
+
 	function createNewImg(id, alt) {
 		var newImg = document.createElement("img");
 		newImg.setAttribute("src", fullPath);
@@ -180,7 +198,6 @@
 	}
 	
 	function removeChildNow() {
-		
 		var parent = document.getElementById("thumbs");
 		parent.removeChild(parent.childNodes[0]);
 	}
@@ -193,15 +210,17 @@
   <h2>Game</h2>
   <p>some message</p>
   <div class="row">
-    <div class="col-md-2" style="background-color:yellow; height:500px;">
+    <div class="col-md-2" style="background-color:yellow;">
+		<div id="mainSelection">
 		<div class="buttons">
-		  <button id="eyes" onclick="removeChildNow()">eyes</button>
-		  <button id="hair">hair</button>
-		  <button id="dress">dress</button>
-		  <button id="shoes">shoes</button>
+		  <button value="eyes" onclick="showList(this.value)">eyes</button>
+		  <button value="hair" onclick="showList(this.value)">hair</button>
+		  <button value="dress" onclick="showList(this.value)">dress</button>
+		  <button value="shoes" onclick="showList(this.value)">shoes</button>
+		</div>
 		</div>
     </div>
-    <div class="col-md-3" style="background-color:green; height:500px;">
+    <div class="col-md-3" style="background-color:green;">
 		<div id="thumbs">
 			<ul id="eyes">
 				<li><img id="Eyes_1_11" onclick="changeImgAttr(this.id, this.alt)" src="../PICS/2EyesThumb/Eyes_1_11.png" alt="eyes"></li>
